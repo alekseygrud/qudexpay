@@ -1,0 +1,26 @@
+[Unit]
+Description=QDP's distributed currency daemon
+After=network.target
+
+[Service]
+User=qdp
+Group=qdp
+
+Type=forking
+PIDFile=/var/lib/qdpd/qdpd.pid
+
+ExecStart=/usr/bin/qdpd -daemon -pid=/var/lib/qdpd/qdpd.pid \
+          -conf=/etc/qdp/qdp.conf -datadir=/var/lib/qdpd
+
+ExecStop=-/usr/bin/qdp-cli -conf=/etc/qdp/qdp.conf \
+         -datadir=/var/lib/qdpd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

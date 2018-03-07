@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=QDP
+Comment=QDP P2P Cryptocurrency
+Comment[fr]=QDP, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=QDP, eşten eşe kriptografik sanal para birimi
+Exec=qdp-qt %u
+Terminal=false
+Type=Application
+Icon=qdp128
+MimeType=x-scheme-handler/qdp;
+Categories=Office;Finance;
