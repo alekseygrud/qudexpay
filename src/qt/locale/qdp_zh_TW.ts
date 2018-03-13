@@ -5333,8 +5333,8 @@ for example: alertnotify=echo %%s | mail -s &quot;QDP Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+3"/>
-        <source>(58265 could be used only on mainnet)</source>
-        <translation type="unfinished">(58265 could be used only on mainnet)</translation>
+        <source>(57265 could be used only on mainnet)</source>
+        <translation type="unfinished">(57265 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5348,7 +5348,7 @@ for example: alertnotify=echo %%s | mail -s &quot;QDP Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 58265 for mainnet)</source>
+        <source>(must be 57265 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -98,7 +98,7 @@ public:
         pchMessageStart[2] = 0x15;
         pchMessageStart[3] = 0x14;
         vAlertPubKey = ParseHex("04722195dd5da10e0183801213cc13a6cfa1beca48a6622f4e733ce497f871eefebbbac77e74a9b1fcaeac6edddcd15accf1c555245d8d6b329302c8befe0373d35");
-        nDefaultPort = 58265;
+        nDefaultPort = 57265;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // QDP starting difficulty is 1 / 2^12  //20
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
