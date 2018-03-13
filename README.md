@@ -9,9 +9,9 @@ Qudex Pay(QDP) is a new generation cryptocurrency that combines the best practic
 	PoW Max Coin Output/Supply: ~ 57M  
 	PoS Blocks: Block 1339201 - Infinite  
 	Block Time: 60 Seconds  
-	Maturity: 60 Confirmations  
+	Maturity: 100 Confirmations  
 	Masternode Requirements: 10,000 QDP  
-	Premine: ~1.6%  
+	Premine: ~1.58%  
 	Premine Usage: 100K QDP will be used to setup 10 masternodes in order to ensure certain blockchain functionalities from the start and will be burned after 6 months, rest will be used for bounty/exchange listing/dev fee.
 
 
