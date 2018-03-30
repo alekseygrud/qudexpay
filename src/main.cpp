@@ -1625,16 +1625,18 @@ int64_t GetBlockValue(int nHeight)
 	int64_t nSubsidy = 0;
 	
 	if(nHeight <= 43200 && nHeight > 0) {
-        nSubsidy = 100 * COIN;
-	} else if (nHeight > 43200 && nHeight <= 129600) {
-		nSubsidy = 80 * COIN;
-	} else if (nHeight > 129601 && nHeight <= 302400) {
-		nSubsidy = 60 * COIN;
-	} else if (nHeight > 302401 && nHeight <= 648000) {
+        	nSubsidy = 100 * COIN;
+	} 
+	else if (nHeight > 43201 && nHeight <= 86400) {
+		nSubsidy = 50 * COIN;
+	} 
+	else if (nHeight > 86401 && nHeight <= 129600) {
 		nSubsidy = 40 * COIN;
-	} else if (nHeight > 648001 && nHeight <= 1339200) { // 1339200 => LAST POW BLOCK
+	} 
+	else if (nHeight > 129601 && nHeight <= 1339200) { // 1339200 => LAST POW BLOCK
 		nSubsidy = 30 * COIN;
-	} else if (nHeight > 1339201) { // 1339201 => FIRST POS BLOCK
+	} 
+	else if (nHeight > 1339201) { // 1339201 => FIRST POS BLOCK
 		nSubsidy = 20 * COIN;
 	} 
 	
@@ -1646,34 +1648,26 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 {
 	int64_t ret = 0;
 
-    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight < 200)
-            return 0;
-    }
-	
-	
+	if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+	if (nHeight < 200)
+	    return 0;
+	}
 	
 	if(nHeight <= 43200 && nHeight > 0) {
-        ret = blockValue / 100 * 20;
-	} else if (nHeight > 43200 && nHeight <= 129600) {
-        ret = blockValue / 100 * 25;
-	} else if (nHeight > 129601 && nHeight <= 302400) {
-        ret = blockValue / 100 * 30;
-	} else if (nHeight > 302401 && nHeight <= 648000) {
-        ret = blockValue / 100 * 40;
-	} else if (nHeight > 648001 && nHeight <= 1339200) {
-        ret = blockValue / 100 * 50;
+		ret = 20 * COIN;
+	} else if (nHeight > 43201 && nHeight <= 86400) {
+		ret = 20 * COIN;
+	} else if (nHeight > 86401 && nHeight <= 129600) {
+		ret = 20 * COIN;
+	} else if (nHeight > 129601 && nHeight <= 1339200) {
+		ret = 20 * COIN;
 	} else if (nHeight > 1339201) {
-		
-		int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
-		
-		if(nMasternodeCount < 1) {
-			nMasternodeCount = mnodeman.stable_size();
-		}
-		
-		int64_t mNodeCoins = nMasternodeCount * Params().MasternodeColleteral() * COIN;
-		
-		if (mNodeCoins == 0) {
+	int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
+	if(nMasternodeCount < 1) {
+		nMasternodeCount = mnodeman.stable_size();
+	}
+	int64_t mNodeCoins = nMasternodeCount * Params().MasternodeColleteral() * COIN;
+	if (mNodeCoins == 0) {
             ret = 0;
 		} else {
 			double lockedCoinValue = mNodeCoins / nMoneySupply;
