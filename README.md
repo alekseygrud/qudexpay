@@ -21,8 +21,11 @@ Qudex Pay(QDP) is a new generation cryptocurrency that combines the best practic
 Proof of Work block rewards, masternode reward allocation schema
 
 1 - 43200 100 QDP Masternodes 20 QDP Miners 80 QDP
+
 43201 - 86400 50 QDP Masternodes 20 QDP Miners 30 QDP
+
 86401 - 648000 40 QDP Masternodes 20 QDP Miners 20 QDP
+
 648001 - 1339200 30 QDP Masternodes 20 QDP Miners 10 QDP
 
 
